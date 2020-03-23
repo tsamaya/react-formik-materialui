@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, TextField } from "@material-ui/core";
+import React from 'react';
+import { Button, TextField } from '@material-ui/core';
 
 export const Form = props => {
   const {
@@ -10,7 +10,7 @@ export const Form = props => {
     handleBlur,
     handleSubmit,
     isValid,
-    isSubmitting
+    isSubmitting,
   } = props;
 
   return (
@@ -21,7 +21,7 @@ export const Form = props => {
         label="Name"
         value={name}
         fullWidth
-        helperText={touched.name ? errors.name : "Your name"}
+        helperText={touched.name ? errors.name : 'Your name'}
         error={touched.name && Boolean(errors.name)}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -33,7 +33,7 @@ export const Form = props => {
         name="age"
         label="Age"
         fullWidth
-        helperText={touched.age ? errors.age : "Your age"}
+        helperText={touched.age ? errors.age : 'Your age'}
         error={touched.age && Boolean(errors.age)}
         value={age}
         onChange={handleChange}
@@ -46,7 +46,7 @@ export const Form = props => {
         name="ratio"
         label="Ratio"
         fullWidth
-        helperText={touched.ratio ? errors.ratio : "A decimal value"}
+        helperText={touched.ratio ? errors.ratio : 'A decimal value'}
         error={touched.ratio && Boolean(errors.ratio)}
         value={ratio}
         onChange={handleChange}
@@ -58,7 +58,7 @@ export const Form = props => {
         label="Email"
         value={email}
         fullWidth
-        helperText={touched.email ? errors.email : "Your email"}
+        helperText={touched.email ? errors.email : 'Your email'}
         error={touched.email && Boolean(errors.email)}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -69,7 +69,7 @@ export const Form = props => {
         name="password"
         label="Password"
         fullWidth
-        helperText={touched.password ? errors.password : "your password"}
+        helperText={touched.password ? errors.password : 'your password'}
         error={touched.password && Boolean(errors.password)}
         value={password}
         onChange={handleChange}
@@ -82,7 +82,7 @@ export const Form = props => {
         label="Confirm Password"
         fullWidth
         helperText={
-          touched.confirmPassword ? errors.confirmPassword : "your passord"
+          touched.confirmPassword ? errors.confirmPassword : 'your passord'
         }
         error={touched.confirmPassword && Boolean(errors.confirmPassword)}
         value={confirmPassword}
