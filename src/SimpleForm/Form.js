@@ -21,6 +21,7 @@ export const Form = props => {
         label="Name"
         value={name}
         fullWidth
+        required
         helperText={touched.name ? errors.name : 'Your name'}
         error={touched.name && Boolean(errors.name)}
         onChange={handleChange}
@@ -33,6 +34,7 @@ export const Form = props => {
         name="age"
         label="Age"
         fullWidth
+        required
         helperText={touched.age ? errors.age : 'Your age'}
         error={touched.age && Boolean(errors.age)}
         value={age}
@@ -46,6 +48,7 @@ export const Form = props => {
         name="ratio"
         label="Ratio"
         fullWidth
+        required
         helperText={touched.ratio ? errors.ratio : 'A decimal value'}
         error={touched.ratio && Boolean(errors.ratio)}
         value={ratio}
@@ -58,6 +61,7 @@ export const Form = props => {
         label="Email"
         value={email}
         fullWidth
+        required
         helperText={touched.email ? errors.email : 'Your email'}
         error={touched.email && Boolean(errors.email)}
         onChange={handleChange}
@@ -69,6 +73,7 @@ export const Form = props => {
         name="password"
         label="Password"
         fullWidth
+        required
         helperText={touched.password ? errors.password : 'your password'}
         error={touched.password && Boolean(errors.password)}
         value={password}
@@ -81,6 +86,7 @@ export const Form = props => {
         name="confirmPassword"
         label="Confirm Password"
         fullWidth
+        required
         helperText={
           touched.confirmPassword ? errors.confirmPassword : 'your passord'
         }
