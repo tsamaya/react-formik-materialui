@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Button, LinearProgress } from '@material-ui/core';
-import { Form, Field, ErrorMessage } from 'formik';
+import { Form, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
 import { KeyboardDatePicker } from 'formik-material-ui-pickers';
 
 // eslint-disable-next-line import/prefer-default-export
 export const BirthDayForm = (props) => {
-  const { errors, touched, isValid, isSubmitting } = props;
+  const { isValid, isSubmitting } = props;
 
   return (
     <Form noValidate>
@@ -17,8 +17,6 @@ export const BirthDayForm = (props) => {
         label="Name"
         fullWidth
         required
-        helperText={touched.name ? errors.name : ''}
-        error={touched.name && Boolean(errors.name)}
       />
       <Field
         component={KeyboardDatePicker}
@@ -26,13 +24,10 @@ export const BirthDayForm = (props) => {
         // placeholder={new Date()}
         label="Birthday"
         format="DD/MM/YYYY"
-        clearable
+        clearable={false} // side effect with timezone
         fullWidth
         InputAdornmentProps={{ position: 'start' }}
-        // helperText={touched.birthday ? errors.birthday : 'here'}
-        // error={touched.birthday && Boolean(errors.birthday)}
       />
-      <ErrorMessage name="birthday" />
       {isSubmitting && <LinearProgress />}
       <Button
         type="submit"
