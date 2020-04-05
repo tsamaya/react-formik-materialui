@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, LinearProgress } from '@material-ui/core';
 import { Form } from 'formik';
 
+// eslint-disable-next-line import/prefer-default-export
 export const SimpleForm = (props) => {
   const {
     values: { name, email, password, confirmPassword },
@@ -65,6 +67,9 @@ export const SimpleForm = (props) => {
         onChange={handleChange}
         onBlur={handleBlur}
       />
+
+      {isSubmitting && <LinearProgress />}
+
       <Button
         type="submit"
         fullWidth

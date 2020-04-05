@@ -1,9 +1,8 @@
 import * as yup from 'yup';
 
+// eslint-disable-next-line import/prefer-default-export
 export const validationSchema = yup.object({
   name: yup.string('Enter a name').required('Name is required'),
-  age: yup.number('Enter a number').required('Age is required'),
-  ratio: yup.number('Enter a decimal').required('ratio is required'),
   email: yup
     .string('Enter your email')
     .email('Enter a valid email')
