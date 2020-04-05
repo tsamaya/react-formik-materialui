@@ -6,8 +6,8 @@ import { CssBaseline, Grid } from '@material-ui/core';
 
 import styles from 'assets/jss/app';
 
-import SimpleForm from 'views/SimpleForm';
-import SimpleFormBridged from 'views/SimpleFormBridged';
+import SimpleForm from 'views/SimpleForm/SimpleFormContainer';
+import SimpleFormBridged from 'views/SimpleForm/SimpleFormBridgedContainer';
 
 const useStyles = makeStyles(styles);
 
