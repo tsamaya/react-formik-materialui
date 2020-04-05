@@ -1,11 +1,14 @@
 import React from 'react';
-import SimpleForm from './SimpleForm';
-import './styles.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import SimpleForm from 'views/SimpleForm';
 
 export default function App() {
   return (
-    <div className="App">
-      <SimpleForm />
-    </div>
+    <CssBaseline>
+      <div className="App">
+        <SimpleForm />
+      </div>
+    </CssBaseline>
   );
 }
