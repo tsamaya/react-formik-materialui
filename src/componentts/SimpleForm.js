@@ -1,20 +1,22 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, LinearProgress } from '@material-ui/core';
+import { Form } from 'formik';
 
-export const Form = props => {
+// eslint-disable-next-line import/prefer-default-export
+export const SimpleForm = (props) => {
   const {
-    values: { name, age, ratio, email, password, confirmPassword },
+    values: { name, email, password, confirmPassword },
     errors,
     touched,
     handleChange,
     handleBlur,
-    handleSubmit,
     isValid,
     isSubmitting,
   } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form noValidate>
       <TextField
         id="name"
         name="name"
@@ -22,36 +24,8 @@ export const Form = props => {
         value={name}
         fullWidth
         required
-        helperText={touched.name ? errors.name : 'Your name'}
+        helperText={touched.name ? errors.name : ''}
         error={touched.name && Boolean(errors.name)}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      <TextField
-        id="age"
-        type="number"
-        step="1"
-        name="age"
-        label="Age"
-        fullWidth
-        required
-        helperText={touched.age ? errors.age : 'Your age'}
-        error={touched.age && Boolean(errors.age)}
-        value={age}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      <TextField
-        id="ratio"
-        type="number"
-        step="0.1"
-        name="ratio"
-        label="Ratio"
-        fullWidth
-        required
-        helperText={touched.ratio ? errors.ratio : 'A decimal value'}
-        error={touched.ratio && Boolean(errors.ratio)}
-        value={ratio}
         onChange={handleChange}
         onBlur={handleBlur}
       />
@@ -62,7 +36,7 @@ export const Form = props => {
         value={email}
         fullWidth
         required
-        helperText={touched.email ? errors.email : 'Your email'}
+        helperText={touched.email ? errors.email : ''}
         error={touched.email && Boolean(errors.email)}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -74,7 +48,7 @@ export const Form = props => {
         label="Password"
         fullWidth
         required
-        helperText={touched.password ? errors.password : 'your password'}
+        helperText={touched.password ? errors.password : ''}
         error={touched.password && Boolean(errors.password)}
         value={password}
         onChange={handleChange}
@@ -87,14 +61,15 @@ export const Form = props => {
         label="Confirm Password"
         fullWidth
         required
-        helperText={
-          touched.confirmPassword ? errors.confirmPassword : 'your passord'
-        }
+        helperText={touched.confirmPassword ? errors.confirmPassword : ''}
         error={touched.confirmPassword && Boolean(errors.confirmPassword)}
         value={confirmPassword}
         onChange={handleChange}
         onBlur={handleBlur}
       />
+
+      {isSubmitting && <LinearProgress />}
+
       <Button
         type="submit"
         fullWidth
@@ -104,6 +79,6 @@ export const Form = props => {
       >
         Submit
       </Button>
-    </form>
+    </Form>
   );
 };

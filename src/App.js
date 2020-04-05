@@ -1,11 +1,28 @@
 import React from 'react';
-import SimpleForm from './SimpleForm';
-import './styles.css';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import { CssBaseline, Grid } from '@material-ui/core';
+
+import styles from 'assets/jss/app';
+
+import SimpleForm from 'views/SimpleForm/SimpleFormContainer';
+import SimpleFormBridged from 'views/SimpleForm/SimpleFormBridgedContainer';
+
+const useStyles = makeStyles(styles);
 
 export default function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <SimpleForm />
-    </div>
+    <CssBaseline>
+      <Grid container className={classes.root} spacing={2}>
+        <Grid item>
+          <SimpleForm />
+        </Grid>
+        <Grid item>
+          <SimpleFormBridged />
+        </Grid>
+      </Grid>
+    </CssBaseline>
   );
 }
