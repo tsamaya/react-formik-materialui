@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Button, LinearProgress } from '@material-ui/core';
+import { Button, InputAdornment, LinearProgress } from '@material-ui/core';
 import { Form, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
 
 // eslint-disable-next-line import/prefer-default-export
-export const SimpleFormBridged = (props) => {
-  const { isValid, isSubmitting } = props;
+export const FormWithDecimals = (props) => {
+  const { errors, isValid, isSubmitting, touched } = props;
 
   return (
     <Form noValidate>
@@ -17,29 +17,29 @@ export const SimpleFormBridged = (props) => {
         fullWidth
         required
       />
+
       <Field
         component={TextField}
-        type="email"
-        name="email"
-        label="Email"
+        name="price"
+        label="Price"
+        type="number"
+        step={0.01}
         fullWidth
         required
+        InputProps={{
+          endAdornment: <InputAdornment position="end">€</InputAdornment>,
+        }}
       />
+
       <Field
         component={TextField}
-        type="password"
-        name="password"
-        label="Password"
+        name="delta"
+        label="Delta"
+        type="number"
+        step={0.01}
         fullWidth
         required
-      />
-      <Field
-        component={TextField}
-        type="password"
-        name="confirmPassword"
-        label="Confirm Password"
-        fullWidth
-        required
+        helperText={touched.delta ? errors.delta : 'Value between 0 and 1'}
       />
 
       {isSubmitting && <LinearProgress />}
