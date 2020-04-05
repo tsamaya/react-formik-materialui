@@ -29,6 +29,7 @@ export const SimpleForm = (props) => {
         onBlur={handleBlur}
       />
       <TextField
+        type="email"
         name="email"
         label="Email"
         value={email}

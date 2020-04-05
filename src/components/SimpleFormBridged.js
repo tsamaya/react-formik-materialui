@@ -19,6 +19,7 @@ export const SimpleFormBridged = (props) => {
       />
       <Field
         component={TextField}
+        type="email"
         name="email"
         label="Email"
         fullWidth
