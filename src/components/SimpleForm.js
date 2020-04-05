@@ -18,7 +18,6 @@ export const SimpleForm = (props) => {
   return (
     <Form noValidate>
       <TextField
-        id="name"
         name="name"
         label="Name"
         value={name}
@@ -30,7 +29,6 @@ export const SimpleForm = (props) => {
         onBlur={handleBlur}
       />
       <TextField
-        id="email"
         name="email"
         label="Email"
         value={email}
@@ -42,7 +40,6 @@ export const SimpleForm = (props) => {
         onBlur={handleBlur}
       />
       <TextField
-        id="password"
         type="password"
         name="password"
         label="Password"
@@ -55,7 +52,6 @@ export const SimpleForm = (props) => {
         onBlur={handleBlur}
       />
       <TextField
-        id="confirmPassword"
         type="password"
         name="confirmPassword"
         label="Confirm Password"

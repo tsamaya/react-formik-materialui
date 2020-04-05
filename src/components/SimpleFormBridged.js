@@ -6,7 +6,7 @@ import { TextField } from 'formik-material-ui';
 
 // eslint-disable-next-line import/prefer-default-export
 export const SimpleFormBridged = (props) => {
-  const { errors, touched, isValid, isSubmitting } = props;
+  const { isValid, isSubmitting } = props;
 
   return (
     <Form noValidate>
@@ -16,8 +16,6 @@ export const SimpleFormBridged = (props) => {
         label="Name"
         fullWidth
         required
-        helperText={touched.name ? errors.name : ''}
-        error={touched.name && Boolean(errors.name)}
       />
       <Field
         component={TextField}
@@ -25,8 +23,6 @@ export const SimpleFormBridged = (props) => {
         label="Email"
         fullWidth
         required
-        helperText={touched.email ? errors.email : ''}
-        error={touched.email && Boolean(errors.email)}
       />
       <Field
         component={TextField}
@@ -35,19 +31,14 @@ export const SimpleFormBridged = (props) => {
         label="Password"
         fullWidth
         required
-        helperText={touched.password ? errors.password : ''}
-        error={touched.password && Boolean(errors.password)}
       />
       <Field
         component={TextField}
-        id="confirmPassword"
         type="password"
         name="confirmPassword"
         label="Confirm Password"
         fullWidth
         required
-        helperText={touched.confirmPassword ? errors.confirmPassword : ''}
-        error={touched.confirmPassword && Boolean(errors.confirmPassword)}
       />
 
       {isSubmitting && <LinearProgress />}

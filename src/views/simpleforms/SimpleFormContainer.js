@@ -6,7 +6,7 @@ import { Paper, Typography } from '@material-ui/core';
 
 import styles from 'assets/jss/forms';
 
-import { SimpleForm } from 'componentts/SimpleForm';
+import { SimpleForm } from 'components/SimpleForm';
 
 import { initialValues } from './initialValues';
 import { validationSchema } from './validation';
@@ -20,7 +20,8 @@ const SimpleFormBridgedContainer = () => {
     <React.Fragment>
       <div className={classes.container}>
         <Paper elevation={3} className={classes.paper}>
-          <Typography>Form</Typography>
+          <Typography variant="h4">Form</Typography>
+          <Typography variant="subtitle1">with plain Material-UI</Typography>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}

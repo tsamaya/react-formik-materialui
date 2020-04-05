@@ -6,8 +6,9 @@ import { CssBaseline, Grid } from '@material-ui/core';
 
 import styles from 'assets/jss/app';
 
-import SimpleForm from 'views/SimpleForm/SimpleFormContainer';
-import SimpleFormBridged from 'views/SimpleForm/SimpleFormBridgedContainer';
+import SimpleForm from 'views/simpleforms/SimpleFormContainer';
+import SimpleFormBridged from 'views/simpleforms/SimpleFormBridgedContainer';
+import BirthdayFormContainer from 'views/datepicker/BirthdayFormContainer';
 
 const useStyles = makeStyles(styles);
 
@@ -21,6 +22,9 @@ export default function App() {
         </Grid>
         <Grid item>
           <SimpleFormBridged />
+        </Grid>
+        <Grid item>
+          <BirthdayFormContainer />
         </Grid>
       </Grid>
     </CssBaseline>
