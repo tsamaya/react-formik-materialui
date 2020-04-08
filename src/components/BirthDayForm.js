@@ -20,6 +20,7 @@ export const BirthDayForm = (props) => {
         helperText={touched.name ? errors.name : ''}
         error={touched.name && Boolean(errors.name)}
       />
+
       <Field
         component={KeyboardDatePicker}
         name="birthday"
@@ -32,8 +33,9 @@ export const BirthDayForm = (props) => {
         // helperText={touched.birthday ? errors.birthday : 'here'}
         // error={touched.birthday && Boolean(errors.birthday)}
       />
-      <ErrorMessage name="birthday" />
+
       {isSubmitting && <LinearProgress />}
+
       <Button
         type="submit"
         fullWidth
