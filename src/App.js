@@ -9,6 +9,7 @@ import styles from 'assets/jss/app';
 import SimpleForm from 'views/simpleforms/SimpleFormContainer';
 import SimpleFormBridged from 'views/simpleforms/SimpleFormBridgedContainer';
 import BirthdayFormContainer from 'views/datepicker/BirthdayFormContainer';
+import FormWithDecimalContainer from 'views/decimals/FormWithDecimalContainer';
 
 const useStyles = makeStyles(styles);
 
@@ -25,6 +26,9 @@ export default function App() {
         </Grid>
         <Grid item>
           <BirthdayFormContainer />
+        </Grid>
+        <Grid item>
+          <FormWithDecimalContainer />
         </Grid>
       </Grid>
     </CssBaseline>
