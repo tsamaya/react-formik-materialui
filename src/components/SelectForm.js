@@ -15,7 +15,14 @@ import { TextField } from 'formik-material-ui';
 
 // eslint-disable-next-line import/prefer-default-export
 export const SelectForm = (props) => {
-  const { isValid, isSubmitting, touched, errors, handleChange } = props;
+  const {
+    isValid,
+    isSubmitting,
+    touched,
+    errors,
+    handleChange,
+    values,
+  } = props;
 
   return (
     <Form noValidate>
@@ -39,6 +46,7 @@ export const SelectForm = (props) => {
             id: 'age-simple',
           }}
           onChange={handleChange}
+          value={values.age}
         >
           <MenuItem value={''} disabled>
             select
