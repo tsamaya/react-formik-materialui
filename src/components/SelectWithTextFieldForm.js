@@ -34,26 +34,18 @@ export const SelectForm = (props) => {
         required
       />
 
-      <FormControl
-        error={touched.age && Boolean(errors.age)}
-        required
+      <Field
+        component={TextField}
+        name="age"
+        label="Age"
         fullWidth
+        required
+        select
       >
-        <InputLabel htmlFor="age-simple">Age</InputLabel>
-        <Select
-          name="age"
-          inputProps={{
-            id: 'age-select',
-          }}
-          onChange={handleChange}
-          value={values.age}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        {errors.age && <FormHelperText>{errors.age}</FormHelperText>}
-      </FormControl>
+        <MenuItem value={10}>Ten</MenuItem>
+        <MenuItem value={20}>Twenty</MenuItem>
+        <MenuItem value={30}>Thirty</MenuItem>
+      </Field>
 
       {isSubmitting && <LinearProgress />}
 

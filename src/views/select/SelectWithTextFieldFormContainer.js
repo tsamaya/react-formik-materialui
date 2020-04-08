@@ -14,7 +14,7 @@ import { handleSubmit } from './handleSubmit';
 
 const useStyles = makeStyles(styles);
 
-const SelectFormContainer = () => {
+const SelectWithTextFieldFormContainer = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -22,7 +22,7 @@ const SelectFormContainer = () => {
         <Paper elevation={3} className={classes.paper}>
           <Typography variant="h4">Select</Typography>
           <Typography variant="subtitle1">
-            with plain Material-UI Select
+            with TextField from formik-material-ui
           </Typography>
           <Formik
             initialValues={initialValues}
@@ -37,4 +37,4 @@ const SelectFormContainer = () => {
   );
 };
 
-export default SelectFormContainer;
+export default SelectWithTextFieldFormContainer;
