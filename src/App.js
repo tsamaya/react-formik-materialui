@@ -11,6 +11,7 @@ import SimpleFormBridged from 'views/simpleforms/SimpleFormBridgedContainer';
 import BirthdayFormContainer from 'views/datepicker/BirthdayFormContainer';
 import FormWithDecimalContainer from 'views/decimals/FormWithDecimalContainer';
 import SelectFormContainer from 'views/select/SelectFormContainer';
+import SelectNativeFormContainer from 'views/select/SelectNativeFormContainer';
 import SelectWithTextFieldFormContainer from 'views/select/SelectWithTextFieldFormContainer';
 
 const useStyles = makeStyles(styles);
@@ -34,6 +35,9 @@ export default function App() {
         </Grid>
         <Grid item>
           <SelectFormContainer />
+        </Grid>
+        <Grid item>
+          <SelectNativeFormContainer />
         </Grid>
         <Grid item>
           <SelectWithTextFieldFormContainer />

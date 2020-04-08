@@ -1,28 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import {
-  Button,
-  FormControl,
-  FormHelperText,
-  LinearProgress,
-  InputLabel,
-  MenuItem,
-  Select,
-} from '@material-ui/core';
+import { Button, LinearProgress, MenuItem } from '@material-ui/core';
 import { Form, Field } from 'formik';
 
 import { TextField } from 'formik-material-ui';
 
 // eslint-disable-next-line import/prefer-default-export
 export const SelectForm = (props) => {
-  const {
-    isValid,
-    isSubmitting,
-    touched,
-    errors,
-    handleChange,
-    values,
-  } = props;
+  const { isValid, isSubmitting } = props;
 
   return (
     <Form noValidate>

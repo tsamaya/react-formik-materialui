@@ -6,15 +6,14 @@ import {
   FormHelperText,
   LinearProgress,
   InputLabel,
-  MenuItem,
-  Select,
+  NativeSelect,
 } from '@material-ui/core';
 import { Form, Field } from 'formik';
 
 import { TextField } from 'formik-material-ui';
 
 // eslint-disable-next-line import/prefer-default-export
-export const SelectForm = (props) => {
+export const SelectNativeForm = (props) => {
   const {
     isValid,
     isSubmitting,
@@ -39,19 +38,20 @@ export const SelectForm = (props) => {
         required
         fullWidth
       >
-        <InputLabel htmlFor="age-simple">Age</InputLabel>
-        <Select
+        <InputLabel htmlFor="age-native">Age</InputLabel>
+        <NativeSelect
           name="age"
           inputProps={{
-            id: 'age-simple',
+            id: 'age-native',
           }}
           onChange={handleChange}
           value={values.age}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
+          <option value={''}>None</option>
+          <option value={10}>Ten</option>
+          <option value={20}>Twenty</option>
+          <option value={30}>Thirty</option>
+        </NativeSelect>
         {errors.age && <FormHelperText>{errors.age}</FormHelperText>}
       </FormControl>
 
